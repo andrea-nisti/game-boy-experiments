@@ -34,7 +34,7 @@ Start:
     or a, c
     jr nz, .copyFont
 
-    ld hl, $9900; print sentence on top screen
+    ld hl, $9901; print sentence on top screen
     ld de, HelloWorldStr
 
 .copyString
@@ -54,7 +54,7 @@ Start:
     ld a, %10000001
     ld [rLCDC], a
 
-.lockup
+.lockup; infinite loop
     jr .lockup
 
 SECTION "Font", ROM0
@@ -66,4 +66,4 @@ FontTilesEnd:
 SECTION "Hello World string", ROM0
 
 HelloWorldStr:
-    db "Hello Github !", 0
+    db "Hello Retro World", 0
