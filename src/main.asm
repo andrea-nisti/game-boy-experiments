@@ -56,6 +56,26 @@ Start:
 
 TileLoop:
 
+.waitVBlank; again
+    ld a, [rLY]
+    cp a, 144
+    jr c, .waitVBlank
+
+    ;xor a; ld a, 0
+    ;ld [rLCDC], a
+
+    ld hl, $8000; copy tile inside VRAM 
+    ld de, Tile
+    ld bc, TileEnd - Tile
+
+.copyTile
+    ld a, [de]
+    ld [hli], a
+    inc de
+    dec bc
+    ld a, b
+    or a, c
+    jr nz, .copyTile
 
 .lockup; infinite loop
     jr .lockup
