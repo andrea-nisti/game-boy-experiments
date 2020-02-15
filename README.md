@@ -16,4 +16,4 @@ In order to be able to run the emulator, you should put bgb.exe inside:
 
 ``../../bgb/bgb64.exe``
 
-If you made it, congratulations! You will see in the emulator ROM, running smootly and flawlessly like butter on a worm toast.
+If you made it, congratulations! You will see the ROM running smootly and flawlessly like butter on a warm toast.
